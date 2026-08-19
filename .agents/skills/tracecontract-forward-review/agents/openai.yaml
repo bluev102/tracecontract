@@ -1,0 +1,9 @@
+interface:
+  display_name: "Forward Trace Review"
+  short_description: "Review requirement-to-test trace paths"
+  default_prompt: "Use $tracecontract-forward-review to inspect a candidate trace forward."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "codebase_memory_mcp"
+      description: "Forward code-path and coverage evidence"

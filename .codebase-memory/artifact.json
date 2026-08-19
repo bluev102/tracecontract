@@ -1,0 +1,11 @@
+{
+    "schema_version": 2,
+    "commit": "",
+    "indexed_at": "2026-08-19T00:00:32Z",
+    "project": "D-workspace-hackathon-tracecontract-mvp",
+    "nodes": 843,
+    "edges": 2018,
+    "original_size": 5177344,
+    "compressed_size": 656752,
+    "compression_level": 3
+}

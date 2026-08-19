@@ -1,0 +1,1 @@
+{"configuration":{"mode":"certification-only"},"inputs":{"fixture":{"path":"uc19.json","sha256":"4850d9a4d797b07919f6d5fe7d33d6fb325afcac54f4fa2a7736742e7995a09a"}},"policy_version":"tracecontract-policy-v1","project_id":"itrust2-uc19","run_id":"uc19-certification-demo-v1","schema":"tracecontract.run-manifest.v1","task_id":"restore-uc19"}

@@ -1,0 +1,9 @@
+interface:
+  display_name: "Reverse Trace Review"
+  short_description: "Review code-to-requirement trace paths"
+  default_prompt: "Use $tracecontract-reverse-review to inspect a candidate trace in reverse."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "codebase_memory_mcp"
+      description: "Inbound code-path and coverage evidence"

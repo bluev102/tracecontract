@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tracecontract-mvp"
+version = "0.1.0"
+description = "Executable Evidence Core MVP for TraceContract"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+tracecontract = "tracecontract.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tracecontract*"]

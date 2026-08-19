@@ -1,0 +1,9 @@
+interface:
+  display_name: "Adversarial Trace Review"
+  short_description: "Challenge trace claims with counterevidence"
+  default_prompt: "Use $tracecontract-adversarial-review to challenge a candidate trace."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "codebase_memory_mcp"
+      description: "Code-path, counterexample, and coverage evidence"

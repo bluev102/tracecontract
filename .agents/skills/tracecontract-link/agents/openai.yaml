@@ -1,0 +1,9 @@
+interface:
+  display_name: "TraceContract Link"
+  short_description: "Propose provenance-bound candidate links"
+  default_prompt: "Use $tracecontract-link to propose trace candidates from pinned evidence."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "codebase_memory_mcp"
+      description: "Code graph discovery, trace, and coverage evidence"

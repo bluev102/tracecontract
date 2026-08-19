@@ -1,0 +1,4 @@
+interface:
+  display_name: "TraceContract Certify"
+  short_description: "Apply deterministic certification gates"
+  default_prompt: "Use $tracecontract-certify to certify imported trace verdicts."

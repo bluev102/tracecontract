@@ -1,0 +1,89 @@
+{
+  "project_id": "itrust2-uc19",
+  "migration_unit": "UC19 Food Diary migration",
+  "constraints": [
+    "future diary dates must be rejected before persistence",
+    "only the patient may create their own diary entry",
+    "validation failure must not create a partial audit record"
+  ],
+  "unknowns": [
+    "runtime coverage outside the verified UC19 behavior envelope is unknown"
+  ],
+  "artifacts": [
+    {
+      "id": "REQ-19.4",
+      "kind": "requirement_claim",
+      "content": {"text": "A diary entry date must not be in the future", "source": "UC19"}
+    },
+    {
+      "id": "DD-19.7",
+      "kind": "design_claim",
+      "content": {"text": "Validate entry.date <= today before persistence", "component": "FoodDiaryService"}
+    },
+    {
+      "id": "CODE-19.12",
+      "kind": "code_symbol",
+      "content": {"symbol": "FoodDiaryService.create", "repo": "itrust2-v8", "commit": "demo-abc123", "normalized_symbol_hash": "sym456"}
+    },
+    {
+      "id": "TEST-19.9",
+      "kind": "test_case",
+      "content": {"name": "futureDateIsRejected", "commit": "demo-abc123", "environment": "mvp-fixture"}
+    },
+    {
+      "id": "REQ-UNRELATED",
+      "kind": "requirement_claim",
+      "content": {"text": "Appointment reminders remain unchanged", "source": "UC7"}
+    }
+  ],
+  "edges": [
+    {
+      "id": "EDGE-01",
+      "type": "detailed_by",
+      "source": "REQ-19.4",
+      "target": "DD-19.7",
+      "required_role": "architect",
+      "approver": "architect:demo",
+      "evidence": [
+        {"kind": "explicit_id", "value": "UC19/R-19.4", "provenance": "benchmark design manifest"},
+        {"kind": "document_span", "value": "DD-19 section 7", "provenance": "pinned design snapshot"}
+      ]
+    },
+    {
+      "id": "EDGE-02",
+      "type": "implemented_by",
+      "source": "DD-19.7",
+      "target": "CODE-19.12",
+      "required_role": "tech_lead",
+      "approver": "tech-lead:demo",
+      "evidence": [
+        {"kind": "static_span", "value": "FoodDiaryService.create", "provenance": "code adapter demo-v1"},
+        {"kind": "git_diff", "value": "demo-abc123", "provenance": "pinned repository snapshot"}
+      ]
+    },
+    {
+      "id": "EDGE-03",
+      "type": "verified_by",
+      "source": "CODE-19.12",
+      "target": "TEST-19.9",
+      "required_role": "qa",
+      "approver": "qa:demo",
+      "evidence": [
+        {"kind": "static_span", "value": "futureDateIsRejected calls create", "provenance": "test adapter demo-v1"},
+        {"kind": "test_result", "outcome": "pass", "commit": "demo-abc123", "environment": "mvp-fixture", "provenance": "fixture test runner"}
+      ]
+    },
+    {
+      "id": "EDGE-04",
+      "type": "verified_by",
+      "source": "REQ-19.4",
+      "target": "TEST-19.9",
+      "required_role": "qa",
+      "approver": "qa:demo",
+      "evidence": [
+        {"kind": "acceptance_mapping", "value": "R-19.4 -> futureDateIsRejected", "provenance": "benchmark gold manifest"},
+        {"kind": "test_result", "outcome": "pass", "commit": "demo-abc123", "environment": "mvp-fixture", "provenance": "fixture test runner"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+interface:
+  display_name: "TraceContract Run"
+  short_description: "Orchestrate an isolated TraceContract run"
+  default_prompt: "Use $tracecontract-run to execute the pinned TraceContract workflow."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "codebase_memory_mcp"
+      description: "Code graph discovery, trace, and coverage evidence"
+policy:
+  allow_implicit_invocation: false

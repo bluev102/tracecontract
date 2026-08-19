@@ -1,0 +1,1 @@
+{"hypotheses":{"H1":"not_evaluated","H2":"not_evaluated","H3":"not_evaluated","H4":"mechanism_passed"},"limitations":["certification-only run; no controlled A/B results were supplied"],"run_id":"uc19-certification-demo-v1","schema":"tracecontract.decision-report.v1"}
